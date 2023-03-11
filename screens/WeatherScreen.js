@@ -1,7 +1,7 @@
 import { View, Text , StyleSheet, Image } from "react-native";
 import { useState, useEffect } from "react";
-function WeatherScreen({ route, navigation }) {
-    
+
+function WeatherScreen({ route, navigation }) {  
   const latitude = route.params.latitude; 
   const longitude = route.params.longitude;
 
@@ -15,7 +15,6 @@ function WeatherScreen({ route, navigation }) {
   });
 
   const fetchWeatherData = (lat,long) => {
-
     fetch(
       `http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&APPID=6d7a420340071e90f4ba164aa1c27db7&units=metric`
     )
@@ -100,4 +99,3 @@ const styles = StyleSheet.create({
 });
 
 export default WeatherScreen;
-
